@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://db/your_database_name
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: muntazir
+      POSTGRES_PASSWORD: Ace123
+      POSTGRES_DB: your_database_name
